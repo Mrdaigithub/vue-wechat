@@ -4,7 +4,7 @@
     <wechat-header></wechat-header>
     <wechat-main></wechat-main>
     <wechat-footer></wechat-footer>
-    <setbg-box></setbg-box>
+    <setbg-box props="setState"></setbg-box>
   </div>
 </template>
 <style lang="scss">
@@ -163,6 +163,11 @@
 
 
   export default{
+    computed:{
+      setState: function () {
+        return false;
+      }
+    },
     store,
     vuex:{
       actions:{

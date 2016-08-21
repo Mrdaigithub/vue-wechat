@@ -9,8 +9,10 @@
       <ul class="pull-right">
         <li v-for="message of messages">
           <img :src="message['headImgUrl']">
-          <strong>{{message.nickname}}</strong>
-          <p>{{message.content}}</p>
+          <div>
+            <p>{{message.nickname}}</p>
+            <strong>{{message.content}}</strong>
+          </div>
         </li>
       </ul>
     </div>

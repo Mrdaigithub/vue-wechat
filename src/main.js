@@ -36,9 +36,6 @@ router.map({
   },
   '/game': {
     component: require('./components/main/Sigin.vue')
-  },
-  '/setbg': {
-    component: require('./components/main/Sigin.vue')
   }
 });
 router.redirect({

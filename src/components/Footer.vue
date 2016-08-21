@@ -10,7 +10,7 @@
       <li><a id="giftBtn" class="icon6" v-link="{path:'gift'}"></a></li>
       <li><a id="voteBtn" class="icon7" v-link="{path:'vote'}"></a></li>
       <li><a id="gameBtn" class="icon8" v-link="{path:'game'}"></a></li>
-      <li><a id="setBtn" class="icon9" v-link="{path:'setbg'}"></a></li>
+      <li><a id="setBtn" class="icon9" href="javascript:;" @click="setState=true"></a></li>
     </ul>
   </footer>
 </template>
@@ -92,3 +92,10 @@
     }
   }
 </style>
+<script>
+  export default{
+    props:{
+      setState:{type:Boolean}
+    }
+  }
+</script>
