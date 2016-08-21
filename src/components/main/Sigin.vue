@@ -1,8 +1,13 @@
 <template>
   <router-view></router-view>
   <div class="signIn">
-    <header>签到墙<span>共人签到</span></header>
-    <ul></ul>
+    <header>签到墙<span>共{{users.length}}人签到</span></header>
+    <ul>
+      <li v-for="user of users">
+        <img :src="user['headImgUrl']">
+        <p>{{user.nickname}}</p>
+      </li>
+    </ul>
   </div>
 </template>
 <style lang="scss">
@@ -27,3 +32,13 @@
     }
   }
 </style>
+<script>
+  import {getUsers} from '../../store/getters'
+  export default{
+    vuex:{
+      getters:{
+        users: getUsers
+      }
+    }
+  }
+</script>

@@ -14,31 +14,31 @@ let router = new VueRouter({
 
 router.map({
   '/home': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/sigin': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/msg': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Message.vue')
   },
   '/rank': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/time': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Time.vue')
   },
   '/gift': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/vote': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/game': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   },
   '/setbg': {
-    component: require('./components/Main/Sigin.vue')
+    component: require('./components/main/Sigin.vue')
   }
 });
 router.redirect({

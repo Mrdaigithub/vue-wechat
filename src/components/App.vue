@@ -151,25 +151,23 @@
 
   import store from '../store/store'
 
-  import {addUser} from '../store/actions'
-  import {getUsers} from '../store/getters'
+  import {addUser,addMessage} from '../store/actions'
+  import {getUsers,getMessages} from '../store/getters'
 
   import Mask from './Mask.vue'
   import Header from './Header.vue'
   import Main from './Main.vue'
   import Footer from './Footer.vue'
   import SetBg from './SetBg.vue'
-  import sigin from './Main/Sigin.vue'
+  import sigin from './main/Sigin.vue'
 
 
   export default{
     store,
     vuex:{
       actions:{
-        addUser
-      },
-      getters:{
-        users: getUsers
+        addUser,
+        addMessage
       }
     },
     components:{
@@ -180,13 +178,25 @@
       'mask': Mask
     },
     ready(){
-      this.$http.get('http://120.26.53.25/wechat/Project/api/getActiveUser/').then((res)=>{
-        JSON.parse(res.data).forEach((e)=>{
-          this.addUser(e);
-        });
-      },(res)=>{
-        console.log('err');
-      });
+      /**
+       * 获取签到用户信息
+       */
+      let toGetUsers = ()=>{
+        this.$http.get('http://120.26.53.25/wechat/Project/api/getActiveUser/')
+          .then((res)=> {
+              res.json().forEach((e)=>{this.addUser(e);})
+            },
+          ()=> console.error("can't get users data!"));
+      }
+      let toGetMessages = ()=>{
+        this.$http.get('http://120.26.53.25/wechat/Project/api/getMessage/')
+          .then((res)=> {
+              res.json().forEach((e)=>{this.addMessage(e);})
+            },
+            ()=> console.error("can't get users data!"));
+      }
+      toGetUsers();
+      toGetMessages();
     }
   }
 </script>
